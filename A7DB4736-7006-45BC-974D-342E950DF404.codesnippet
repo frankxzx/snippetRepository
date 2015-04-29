@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UITextView *salesTextView = [[UITextView alloc]init];
+salesTextView.scrollEnabled = NO;
+salesTextView.editable = NO;
+salesTextView.backgroundColor = [UIColor clearColor];
+[cell.contentView addSubview:salesTextView];
+
+salesTextView.dataDetectorTypes = UIDataDetectorTypeAll;
+
+if (mDataArray.count) {
+    salesTextView.attributedText = [self getAttStr:mDataArray[0]];
+}
+
+NSMutableAttributedString *alissStr = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"F：%@\n",data[@"fax"]] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:RGB(95, 95, 95),NSUnderlineStyleAttributeName:[NSNumber numberWithUnsignedInteger:NSUnderlineStyleSingle]}];
+        [attText appendAttributedString:alissStr];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A7DB4736-7006-45BC-974D-342E950DF404</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>下划线 ，超文本链接</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

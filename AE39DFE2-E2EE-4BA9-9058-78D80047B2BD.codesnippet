@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassInterfaceMethods</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+1.NSData转化 NSString;
+
+NSData* data;
+
+NSString* Str=［［NSString alloc] initWithData:data   encoding:NSASCIIStringEncoding];
+
+
+
+2. NSString转化 NSData对象
+
+NSString *String = [[NSString alloc]  initWithData:Data encoding:NSUTF8StringEncoding];
+
+
+
+3.图片转换为NSData对象
+
+NSData *imageData =
+
+[UIImageJPEGRepresentation([UIImage imageWithContentsOfFile:imageName],    0.8) retain];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AE39DFE2-E2EE-4BA9-9058-78D80047B2BD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSString,NSDate之间的转化</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

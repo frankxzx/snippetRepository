@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//    //点击 事件
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageViewTappedWithObject:)];
+//    
+//    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageViewTappedWithObjectDoubleTap:)];
+//    [doubleTapGestureRecognizer setNumberOfTapsRequired:2];
+//    [markView addGestureRecognizer:doubleTapGestureRecognizer];
+//    [markView addGestureRecognizer:tap];
+//    //双击触发 单击失效
+//    [tap requireGestureRecognizerToFail:doubleTapGestureRecognizer];
+//    [markView addSubview:showImageView];
+//    [self.view addSubview:markView];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>186CE2D4-7816-47DC-80B9-B71122BBA6DC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>双击单击 </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

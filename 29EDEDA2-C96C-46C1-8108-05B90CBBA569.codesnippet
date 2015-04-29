@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//ZBarSDK
+
++ (UIImage *)qrImageForString:(NSString *)string imageSize:(CGFloat)size
+
++ (UIImage *)qrImageForString:(NSString *)string imageSize:(CGFloat)size Topimg:(UIImage *)topimg{
+    if (![string length]) {
+        return nil;
+    }
+    
+    QRcode *code = QRcode_encodeString([string UTF8String], 0, QR_ECLEVEL_L, QR_MODE_8, 1);
+    if (!code) {
+        return nil;
+    }
+    
+    // create context
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef ctx = CGBitmapContextCreate(0, size, size, 8, size * 4, colorSpace, kCGImageAlphaPremultipliedLast);
+    
+    CGAffineTransform translateTransform = CGAffineTransformMakeTranslation(0, -size);
+    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(1, -1);
+    CGContextConcatCTM(ctx, CGAffineTransformConcat(translateTransform, scaleTransform));
+    
+    // draw QR on this context
+    [QRCodeGenerator drawQRCode:code context:ctx size:size];
+    
+    // get image
+    CGImageRef qrCGImage = CGBitmapContextCreateImage(ctx);
+    UIImage * qrImage = [UIImage imageWithCGImage:qrCGImage];
+    
+    
+    if(topimg)
+    {
+        UIGraphicsBeginImageContext(qrImage.size);
+        
+        //Draw image2
+        [qrImage drawInRect:CGRectMake(0, 0, qrImage.size.width, qrImage.size.height)];
+        
+        //Draw image1
+        float r=qrImage.size.width*35/240;
+        [topimg drawInRect:CGRectMake((qrImage.size.width-r)/2, (qrImage.size.height-r)/2 ,r, r)];
+        //     [topimg drawInRect:CGRectMake(101, 101 ,37, 37)];
+        //        [topimg drawInRect:CGRectMake((qrImage.size.width-38)/2, (qrImage.size.height-38)/2 ,38, 38)];
+        qrImage=UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+    }
+    
+    
+    // some releases
+    CGContextRelease(ctx);
+    CGImageRelease(qrCGImage);
+    CGColorSpaceRelease(colorSpace);
+    QRcode_free(code);
+    
+    return qrImage;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>29EDEDA2-C96C-46C1-8108-05B90CBBA569</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>二维码 小图设置 ZBar SDK</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

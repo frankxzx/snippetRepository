@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (IBAction)showBigAlert:(id)sender {
+    UIAlertView* find = [[UIAlertView alloc] initWithTitle:@"big size view" message:@"do you see it" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+    //[find setDelegate:self];
+    /*
+     UIAlertView *find = [[UIAlertView alloc] initWithFrame:CGRectMake(5, 20, 320,700)];
+     find.title=@"big size view" ;
+     find.message=@"some message";
+     */
+    [find show];
+    [find release];
+    
+}
+//- (void)willPresentAlertView:(UIAlertView *)alertView
+-(void)willPresentAlertView:(UIAlertView *)alertView {
+    [alertView setFrame:CGRectMake(1, 20, 1000, 600)];
+    for( UIView * view in alertView.subviews )
+    {
+        if( [view isKindOfClass:[UILabel class]] )
+        {
+            UILabel* label = (UILabel*) view;
+            label.textAlignment = UITextAlignmentLeft;
+            label.font=[UIFont fontWithName:@"STHeitiSC-Medium" size:18];
+            label.textColor=[UIColor greenColor];
+            
+        }
+        if ( [view isKindOfClass:[UIButton class]] )
+            }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ECEBA3CC-A7AC-419B-8F87-5F42BE788F70</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>自定义uialertview的字体和大小颜色等</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
